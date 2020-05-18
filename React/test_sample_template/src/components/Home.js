@@ -7,7 +7,7 @@ function Home() {
         <br/>
         <br/>
         <h1 className="header center orange-text">About This Template</h1>
-        <div className="row left">
+        <div className="row left-align">
           This is a generic sample Template.
           <br/>
           About is for describing what's the sample is for and how to use it.
