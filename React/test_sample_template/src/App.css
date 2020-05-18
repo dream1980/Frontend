@@ -3,7 +3,8 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  vertical-align: middle;
+  height: 5vmin;
   pointer-events: none;
 }
 
@@ -18,6 +19,13 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.NavBar .App-title {
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
