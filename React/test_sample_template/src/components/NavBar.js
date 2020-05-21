@@ -8,7 +8,7 @@ function NavBar() {
     let activeCSS = { color: "orange" }
 
     return (
-      <nav className="NavBar light-blue lighten-1">
+      <nav className="NavBar black lighten-1">
           <div className="container">
             <span className="left">
                 <img src={SampleLogo} className="App-logo" alt="logo" />

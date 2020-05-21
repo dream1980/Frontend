@@ -9,6 +9,7 @@ import NavBar from './components/NavBar';
 import Home from './components/Home';
 import Params from './components/Params';
 import DomLogs from './components/DomLogs';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route path="/params" component={Params} />
         <Route path="/domlogs" component={DomLogs} />
+        <Footer />
       </div>
     </BrowserRouter>
   );
