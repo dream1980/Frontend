@@ -5,7 +5,7 @@ import SampleLogo from "../images/samplelogo.png";
 function NavBar() {
   
     // mark the active button in the navigation bar
-    let activeCSS = { fontWeight: "bold", color: "orange" }
+    let activeCSS = { color: "orange" }
 
     return (
       <nav className="NavBar light-blue lighten-1">
