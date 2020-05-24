@@ -18,10 +18,11 @@ class Params extends Component {
 
         e.preventDefault();
 
+        console.log("Starting Submit")
         //console.log(document.getElementById("todo_to_add").value);
 
         // add the current state content to todos
-        this.props.addTodo(this.state.content);
+        //this.props.addTodo(this.state.content);
 
         // clear state
         this.setState({
@@ -34,14 +35,14 @@ class Params extends Component {
             <div className="Params container center">
                 <h1 className="header center orange-text">Parameters</h1>
               
-                <form>
+                <form onSubmit={this.handleOnSubmit}>
 
-                    <div class="card">
-                        <div class="card-tabs">
-                            <ul class="tabs tabs-fixed-width">
-                                <li class="tab"><a href="#step1">Step 1</a></li>
-                                <li class="tab"><a class="active" href="#step2">Step 2</a></li>
-                                <li class="tab"><a href="#step3">Step 3</a></li>
+                    <div className="card">
+                        <div className="card-tabs">
+                            <ul className="tabs tabs-fixed-width">
+                                <li className="tab"><a href="#step1">Step 1</a></li>
+                                <li className="tab"><a className="active" href="#step2">Step 2</a></li>
+                                <li className="tab"><a href="#step3">Step 3</a></li>
                             </ul>
                         </div>
 
@@ -146,66 +147,77 @@ class Params extends Component {
                                         <div className="col s12">
                                         
                                             <div className="row">
-                                                <div className="input-field col s6">
-                                                    <i className="material-icons prefix">link</i>
-                                                    <input id="icon_link1" type="url" className="validate" />
-                                                    <label htmlFor="icon_link1">URL 1</label>
-                                                    <span className="helper-text" data-error="wrong url, must have http or https" data-success=""></span>
+                                                <div className="input-field col s2">
+                                                    <label>Child 1:</label>
                                                 </div>
-                                                <div className="input-field col s6">
-                                                    <i className="material-icons prefix">link</i>
-                                                    <input id="icon_link2" type="url" className="validate" />
-                                                    <label htmlFor="icon_link2">URL 2</label>
-                                                    <span className="helper-text" data-error="wrong url, must have http or https" data-success=""></span>
+                                                <div className="input-field col s3">
+                                                    <i className="material-icons prefix">accessibility</i>
+                                                    <input id="icon_child1_firstname" type="text" className="validate" />
+                                                    <label htmlFor="icon_child1_firstname">First Name</label>
+                                                    <span className="helper-text" data-error="" data-success=""></span>
                                                 </div>
-                                            </div>
-
-                                            <div className="row">
-                                                <div className="input-field col s6">
-                                                    <i className="material-icons prefix">link</i>
-                                                    <input id="icon_link3" type="url" className="validate" />
-                                                    <label htmlFor="icon_link3">URL 3</label>
-                                                    <span className="helper-text" data-error="wrong url, must have http or https" data-success=""></span>
+                                                <div className="input-field col s3">
+                                                    <i className="material-icons prefix">accessibility</i>
+                                                    <input id="icon_child1_lastname" type="text" className="validate" />
+                                                    <label htmlFor="icon_child1_lastname">Last Name</label>
+                                                    <span className="helper-text" data-error="" data-success=""></span>
                                                 </div>
-                                                <div className="input-field col s6">
-                                                    <i className="material-icons prefix">link</i>
-                                                    <input id="icon_link4" type="url" className="validate" />
-                                                    <label htmlFor="icon_link4">URL 4</label>
-                                                    <span className="helper-text" data-error="wrong url, must have http or https" data-success=""></span>
+                                                <div className="input-field col s3">
+                                                    <i className="material-icons prefix">access_time</i>
+                                                    <input id="icon_age1" type="number" min="1" max="100" className="validate" />
+                                                    <label htmlFor="icon_age1">AGE</label>
+                                                    <span className="helper-text" data-error="between 1 to 100 only" data-success=""></span>
                                                 </div>
                                             </div>
 
                                             <div className="row">
-                                                <div className="input-field col s6">
-                                                    <i className="material-icons prefix">link</i>
-                                                    <input id="icon_link5" type="url" className="validate" />
-                                                    <label htmlFor="icon_link5">URL 5</label>
-                                                    <span className="helper-text" data-error="wrong url, must have http or https" data-success=""></span>
+                                                <div className="input-field col s2">
+                                                    <label>Child 2:</label>
                                                 </div>
-                                                <div className="input-field col s6">
-                                                    <i className="material-icons prefix">link</i>
-                                                    <input id="icon_link6" type="url" className="validate" />
-                                                    <label htmlFor="icon_link6">URL 6</label>
-                                                    <span className="helper-text" data-error="wrong url, must have http or https" data-success=""></span>
+                                                <div className="input-field col s3">
+                                                    <i className="material-icons prefix">accessibility</i>
+                                                    <input id="icon_child2_firstname" type="text" className="validate" />
+                                                    <label htmlFor="icon_child2_firstname">First Name</label>
+                                                    <span className="helper-text" data-error="" data-success=""></span>
+                                                </div>
+                                                <div className="input-field col s3">
+                                                    <i className="material-icons prefix">accessibility</i>
+                                                    <input id="icon_child2_lastname" type="text" className="validate" />
+                                                    <label htmlFor="icon_child2_lastname">Last Name</label>
+                                                    <span className="helper-text" data-error="" data-success=""></span>
+                                                </div>
+                                                <div className="input-field col s3">
+                                                    <i className="material-icons prefix">access_time</i>
+                                                    <input id="icon_age2" type="number" min="1" max="100" className="validate" />
+                                                    <label htmlFor="icon_age2">AGE</label>
+                                                    <span className="helper-text" data-error="between 1 to 100 only" data-success=""></span>
                                                 </div>
                                             </div>
 
                                             <div className="row">
-                                                <div className="input-field col s6">
-                                                    <div className="switch">
-                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                        <label className="active" htmlFor="match">Match:</label>
-                                                        <br/>
-                                                        <i className="material-icons prefix">search</i>
-                                                        <label>
-                                                        Off
-                                                        <input id="match" type="checkbox" defaultChecked />
-                                                        <span className="lever"></span>
-                                                        On
-                                                        </label>
-                                                    </div>
+                                                <div className="input-field col s2">
+                                                    <label>Child 3:</label>
+                                                </div>
+                                                <div className="input-field col s3">
+                                                    <i className="material-icons prefix">accessibility</i>
+                                                    <input id="icon_child3_firstname" type="text" className="validate" />
+                                                    <label htmlFor="icon_child3_firstname">First Name</label>
+                                                    <span className="helper-text" data-error="" data-success=""></span>
+                                                </div>
+                                                <div className="input-field col s3">
+                                                    <i className="material-icons prefix">accessibility</i>
+                                                    <input id="icon_child3_lastname" type="text" className="validate" />
+                                                    <label htmlFor="icon_child3_lastname">Last Name</label>
+                                                    <span className="helper-text" data-error="" data-success=""></span>
+                                                </div>
+                                                <div className="input-field col s3">
+                                                    <i className="material-icons prefix">access_time</i>
+                                                    <input id="icon_age3" type="number" min="1" max="100" className="validate" />
+                                                    <label htmlFor="icon_age3">AGE</label>
+                                                    <span className="helper-text" data-error="between 1 to 100 only" data-success=""></span>
                                                 </div>
                                             </div>
+
 
                                         </div>
                                         
@@ -229,62 +241,17 @@ class Params extends Component {
                                     <div className="row left-align">
                         
                                         <div className="col s12">
-                                        
-                                            <div className="row">
-                                                <div className="input-field col s6">
-                                                    <i className="material-icons prefix">link</i>
-                                                    <input id="icon_link1" type="url" className="validate" />
-                                                    <label htmlFor="icon_link1">URL 1</label>
-                                                    <span className="helper-text" data-error="wrong url, must have http or https" data-success=""></span>
-                                                </div>
-                                                <div className="input-field col s6">
-                                                    <i className="material-icons prefix">link</i>
-                                                    <input id="icon_link2" type="url" className="validate" />
-                                                    <label htmlFor="icon_link2">URL 2</label>
-                                                    <span className="helper-text" data-error="wrong url, must have http or https" data-success=""></span>
-                                                </div>
-                                            </div>
-
-                                            <div className="row">
-                                                <div className="input-field col s6">
-                                                    <i className="material-icons prefix">link</i>
-                                                    <input id="icon_link3" type="url" className="validate" />
-                                                    <label htmlFor="icon_link3">URL 3</label>
-                                                    <span className="helper-text" data-error="wrong url, must have http or https" data-success=""></span>
-                                                </div>
-                                                <div className="input-field col s6">
-                                                    <i className="material-icons prefix">link</i>
-                                                    <input id="icon_link4" type="url" className="validate" />
-                                                    <label htmlFor="icon_link4">URL 4</label>
-                                                    <span className="helper-text" data-error="wrong url, must have http or https" data-success=""></span>
-                                                </div>
-                                            </div>
-
-                                            <div className="row">
-                                                <div className="input-field col s6">
-                                                    <i className="material-icons prefix">link</i>
-                                                    <input id="icon_link5" type="url" className="validate" />
-                                                    <label htmlFor="icon_link5">URL 5</label>
-                                                    <span className="helper-text" data-error="wrong url, must have http or https" data-success=""></span>
-                                                </div>
-                                                <div className="input-field col s6">
-                                                    <i className="material-icons prefix">link</i>
-                                                    <input id="icon_link6" type="url" className="validate" />
-                                                    <label htmlFor="icon_link6">URL 6</label>
-                                                    <span className="helper-text" data-error="wrong url, must have http or https" data-success=""></span>
-                                                </div>
-                                            </div>
-
+                                                                                    
                                             <div className="row">
                                                 <div className="input-field col s6">
                                                     <div className="switch">
                                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                        <label className="active" htmlFor="match">Match:</label>
+                                                        <label className="active" htmlFor="match">Delete:</label>
                                                         <br/>
-                                                        <i className="material-icons prefix">search</i>
+                                                        <i className="material-icons prefix">delete_forever</i>
                                                         <label>
                                                         Off
-                                                        <input id="match" type="checkbox" defaultChecked />
+                                                        <input id="delete" type="checkbox" defaultChecked />
                                                         <span className="lever"></span>
                                                         On
                                                         </label>
@@ -302,8 +269,8 @@ class Params extends Component {
                     
                     </div>
 
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-                    <i class="material-icons right">send</i>
+                    <button className="btn waves-effect waves-light" type="submit" name="action">Submit
+                    <i className="material-icons right">send</i>
                     </button>
 
                 </form>
