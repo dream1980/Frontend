@@ -21,6 +21,8 @@ function Home() {
 
         <div className="row center">
           <Link to="/params" className="btn-large waves-effect waves-light orange">Get Started</Link>
+          <br/>
+          <br/>
         </div>
       </div>
     );

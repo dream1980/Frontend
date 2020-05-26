@@ -3,22 +3,55 @@ import React, {Component} from 'react';
 class Params extends Component {
     
     state = {
-        content: ''
+        icon_link1 : '',
+        icon_link2 : '',
+        icon_link3 : '',
+        icon_link4 : '',
+        icon_link5 : '',
+        icon_link6 : '',
+        match : '',
+
+        icon_child1_firstname : '',
+        icon_child1_lastname : '',
+        icon_age1 : '',
+        icon_child2_firstname : '',
+        icon_child2_lastname : '',
+        icon_age2 : '',
+        icon_child3_firstname : '',
+        icon_child3_lastname : '',
+        icon_age3 : '',
+
+        delete : ''
     }
+
+    updateParams = (id, value) => {
+/* 
+        let paramsList = this.state.filter(param => {
+          if (todo.id === id)
+            return false;
+          else
+            return todo;
+        })
+    
+        this.setState({
+            paramsList 
+        }) */
+      }
+
 
     handleOnChange = (e) => {
     
+        console.log(e.target.id)
+
         // sync the state with the textbox value
-        this.setState({
-            content: e.target.value
-        })
+        this.updateParams(e.target.id, e.target.value)
     }
 
     handleOnSubmit = (e) => {
 
         e.preventDefault();
 
-        console.log("Starting Submit")
+        console.log("Starting Submit only to dom logs for this sample")
         //console.log(document.getElementById("todo_to_add").value);
 
         // add the current state content to todos
@@ -64,13 +97,13 @@ class Params extends Component {
                                             <div className="row">
                                                 <div className="input-field col s6">
                                                     <i className="material-icons prefix">link</i>
-                                                    <input id="icon_link1" type="url" className="validate" />
+                                                    <input id="icon_link1" type="url" onChange={this.handleOnChange} className="validate" />
                                                     <label htmlFor="icon_link1">URL 1</label>
                                                     <span className="helper-text" data-error="wrong url, must have http or https" data-success=""></span>
                                                 </div>
                                                 <div className="input-field col s6">
                                                     <i className="material-icons prefix">link</i>
-                                                    <input id="icon_link2" type="url" className="validate" />
+                                                    <input id="icon_link2" type="url" onChange={this.handleOnChange} className="validate" />
                                                     <label htmlFor="icon_link2">URL 2</label>
                                                     <span className="helper-text" data-error="wrong url, must have http or https" data-success=""></span>
                                                 </div>
@@ -79,13 +112,13 @@ class Params extends Component {
                                             <div className="row">
                                                 <div className="input-field col s6">
                                                     <i className="material-icons prefix">link</i>
-                                                    <input id="icon_link3" type="url" className="validate" />
+                                                    <input id="icon_link3" type="url" onChange={this.handleOnChange} className="validate" />
                                                     <label htmlFor="icon_link3">URL 3</label>
                                                     <span className="helper-text" data-error="wrong url, must have http or https" data-success=""></span>
                                                 </div>
                                                 <div className="input-field col s6">
                                                     <i className="material-icons prefix">link</i>
-                                                    <input id="icon_link4" type="url" className="validate" />
+                                                    <input id="icon_link4" type="url" onChange={this.handleOnChange} className="validate" />
                                                     <label htmlFor="icon_link4">URL 4</label>
                                                     <span className="helper-text" data-error="wrong url, must have http or https" data-success=""></span>
                                                 </div>
@@ -94,13 +127,13 @@ class Params extends Component {
                                             <div className="row">
                                                 <div className="input-field col s6">
                                                     <i className="material-icons prefix">link</i>
-                                                    <input id="icon_link5" type="url" className="validate" />
+                                                    <input id="icon_link5" type="url" onChange={this.handleOnChange} className="validate" />
                                                     <label htmlFor="icon_link5">URL 5</label>
                                                     <span className="helper-text" data-error="wrong url, must have http or https" data-success=""></span>
                                                 </div>
                                                 <div className="input-field col s6">
                                                     <i className="material-icons prefix">link</i>
-                                                    <input id="icon_link6" type="url" className="validate" />
+                                                    <input id="icon_link6" type="url" onChange={this.handleOnChange} className="validate" />
                                                     <label htmlFor="icon_link6">URL 6</label>
                                                     <span className="helper-text" data-error="wrong url, must have http or https" data-success=""></span>
                                                 </div>
