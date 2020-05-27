@@ -3,45 +3,69 @@ import React, {Component} from 'react';
 class Params extends Component {
     
     state = {
-        icon_link1 : '',
-        icon_link2 : '',
-        icon_link3 : '',
-        icon_link4 : '',
-        icon_link5 : '',
-        icon_link6 : '',
-        match : '',
+        params: [
+            { id: 'icon_link1', value: ''},
+            { id: 'icon_link2', value: ''},
+            { id: 'icon_link3', value: ''},
+            { id: 'icon_link4', value: ''},
+            { id: 'icon_link5', value: ''},
+            { id: 'icon_link6', value: ''},
+            { id: 'match', value: 'on'},
 
-        icon_child1_firstname : '',
-        icon_child1_lastname : '',
-        icon_age1 : '',
-        icon_child2_firstname : '',
-        icon_child2_lastname : '',
-        icon_age2 : '',
-        icon_child3_firstname : '',
-        icon_child3_lastname : '',
-        icon_age3 : '',
-
-        delete : ''
+            { id: 'icon_child1_firstname', value: ''},
+            { id: 'icon_child1_lastname', value: ''},
+            { id: 'icon_age1', value: ''},
+            { id: 'icon_child2_firstname', value: ''},
+            { id: 'icon_child2_lastname', value: ''},
+            { id: 'icon_age2', value: ''},
+            { id: 'icon_child3_firstname', value: ''},
+            { id: 'icon_child3_lastname', value: ''},
+            { id: 'icon_age3', value: ''},
+            
+            { id: 'delete', value: 'on'}
+        ]
     }
 
     updateParams = (id, value) => {
-/* 
-        let paramsList = this.state.filter(param => {
-          if (todo.id === id)
-            return false;
-          else
-            return todo;
+
+        // looping/foreach on the params
+        let paramsList = this.state.params.filter(param => {
+            if (param.id === id)
+            {
+                // updating only the defined param
+
+                if (id === 'match' || id === 'delete')
+                {
+                    // switcher/toggle value to update
+                    if (param.value === 'on')
+                        param.value = 'off';
+                    else
+                        param.value = 'on';
+                }
+                else {
+                    // regular value to update, simple textbox value
+                    param.value = value;
+                }
+
+                // return the updated param to paramslist
+                return param;
+            }
+            else
+                return param;
         })
+
+        console.log(paramsList);
     
+        // upda
         this.setState({
-            paramsList 
-        }) */
+            params: paramsList 
+        })
       }
 
 
     handleOnChange = (e) => {
     
-        console.log(e.target.id)
+        console.log(e.target.id, e.target.value)
 
         // sync the state with the textbox value
         this.updateParams(e.target.id, e.target.value)
@@ -146,7 +170,7 @@ class Params extends Component {
                                                         <label className="active" htmlFor="match">Match:</label>
                                                         <br/>
                                                         <i className="material-icons prefix">search</i>
-                                                        <label>
+                                                        <label onChange={this.handleOnChange}>
                                                         Off
                                                         <input id="match" type="checkbox" defaultChecked />
                                                         <span className="lever"></span>
@@ -185,19 +209,19 @@ class Params extends Component {
                                                 </div>
                                                 <div className="input-field col s3">
                                                     <i className="material-icons prefix">accessibility</i>
-                                                    <input id="icon_child1_firstname" type="text" className="validate" />
+                                                    <input id="icon_child1_firstname" type="text" onChange={this.handleOnChange} className="validate" />
                                                     <label htmlFor="icon_child1_firstname">First Name</label>
                                                     <span className="helper-text" data-error="" data-success=""></span>
                                                 </div>
                                                 <div className="input-field col s3">
                                                     <i className="material-icons prefix">accessibility</i>
-                                                    <input id="icon_child1_lastname" type="text" className="validate" />
+                                                    <input id="icon_child1_lastname" type="text" onChange={this.handleOnChange} className="validate" />
                                                     <label htmlFor="icon_child1_lastname">Last Name</label>
                                                     <span className="helper-text" data-error="" data-success=""></span>
                                                 </div>
                                                 <div className="input-field col s3">
                                                     <i className="material-icons prefix">access_time</i>
-                                                    <input id="icon_age1" type="number" min="1" max="100" className="validate" />
+                                                    <input id="icon_age1" type="number" onChange={this.handleOnChange} min="1" max="100" className="validate" />
                                                     <label htmlFor="icon_age1">AGE</label>
                                                     <span className="helper-text" data-error="between 1 to 100 only" data-success=""></span>
                                                 </div>
@@ -209,19 +233,19 @@ class Params extends Component {
                                                 </div>
                                                 <div className="input-field col s3">
                                                     <i className="material-icons prefix">accessibility</i>
-                                                    <input id="icon_child2_firstname" type="text" className="validate" />
+                                                    <input id="icon_child2_firstname" type="text" onChange={this.handleOnChange} className="validate" />
                                                     <label htmlFor="icon_child2_firstname">First Name</label>
                                                     <span className="helper-text" data-error="" data-success=""></span>
                                                 </div>
                                                 <div className="input-field col s3">
                                                     <i className="material-icons prefix">accessibility</i>
-                                                    <input id="icon_child2_lastname" type="text" className="validate" />
+                                                    <input id="icon_child2_lastname" type="text" onChange={this.handleOnChange} className="validate" />
                                                     <label htmlFor="icon_child2_lastname">Last Name</label>
                                                     <span className="helper-text" data-error="" data-success=""></span>
                                                 </div>
                                                 <div className="input-field col s3">
                                                     <i className="material-icons prefix">access_time</i>
-                                                    <input id="icon_age2" type="number" min="1" max="100" className="validate" />
+                                                    <input id="icon_age2" type="number" onChange={this.handleOnChange} min="1" max="100" className="validate" />
                                                     <label htmlFor="icon_age2">AGE</label>
                                                     <span className="helper-text" data-error="between 1 to 100 only" data-success=""></span>
                                                 </div>
@@ -233,19 +257,19 @@ class Params extends Component {
                                                 </div>
                                                 <div className="input-field col s3">
                                                     <i className="material-icons prefix">accessibility</i>
-                                                    <input id="icon_child3_firstname" type="text" className="validate" />
+                                                    <input id="icon_child3_firstname" type="text" onChange={this.handleOnChange} className="validate" />
                                                     <label htmlFor="icon_child3_firstname">First Name</label>
                                                     <span className="helper-text" data-error="" data-success=""></span>
                                                 </div>
                                                 <div className="input-field col s3">
                                                     <i className="material-icons prefix">accessibility</i>
-                                                    <input id="icon_child3_lastname" type="text" className="validate" />
+                                                    <input id="icon_child3_lastname" type="text" onChange={this.handleOnChange} className="validate" />
                                                     <label htmlFor="icon_child3_lastname">Last Name</label>
                                                     <span className="helper-text" data-error="" data-success=""></span>
                                                 </div>
                                                 <div className="input-field col s3">
                                                     <i className="material-icons prefix">access_time</i>
-                                                    <input id="icon_age3" type="number" min="1" max="100" className="validate" />
+                                                    <input id="icon_age3" type="number" onChange={this.handleOnChange} min="1" max="100" className="validate" />
                                                     <label htmlFor="icon_age3">AGE</label>
                                                     <span className="helper-text" data-error="between 1 to 100 only" data-success=""></span>
                                                 </div>
@@ -282,7 +306,7 @@ class Params extends Component {
                                                         <label className="active" htmlFor="match">Delete:</label>
                                                         <br/>
                                                         <i className="material-icons prefix">delete_forever</i>
-                                                        <label>
+                                                        <label onChange={this.handleOnChange}>
                                                         Off
                                                         <input id="delete" type="checkbox" defaultChecked />
                                                         <span className="lever"></span>

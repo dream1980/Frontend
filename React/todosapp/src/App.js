@@ -7,8 +7,8 @@ class App extends Component {
 
   state = {
     todos: [
-      { id: "1", desc: "buy a stroller bag" },
-      { id: "2", desc: "study react" }
+      { id: "1", value: "buy a stroller bag" },
+      { id: "2", value: "study react" }
     ]
   }
 
@@ -29,9 +29,9 @@ class App extends Component {
   addTodo = (todo) => {
 
 
-    let todo_tmp = { id: "", desc: ""};
+    let todo_tmp = { id: "", value: ""};
     todo_tmp.id = Math.random();
-    todo_tmp.desc = todo;
+    todo_tmp.value = todo;
     
     let todos_tmp = [...this.state.todos, todo_tmp];
 
