@@ -71,6 +71,19 @@ class Params extends Component {
         this.updateParams(e.target.id, e.target.value)
     }
 
+    handleOnLoad = () => {
+
+        // https://stackoverflow.com/questions/35082047/call-external-javascript-function-from-react-components
+
+        // // on load of params page
+        // // update all the default params that in the state to the form inputs
+        // this.state.params.map( param => {
+        //     return (
+        //         document.getElementById('{param.id}').value = {param.value};
+        //     );
+        // })
+    }
+
     handleOnSubmit = (e) => {
 
         e.preventDefault();
@@ -89,7 +102,7 @@ class Params extends Component {
 
     render() {
         return (
-            <div className="Params container center">
+            <div className="Params container center" onLoad={this.handleOnLoad}>
                 <h1 className="header center orange-text">Parameters</h1>
               
                 <form onSubmit={this.handleOnSubmit}>
