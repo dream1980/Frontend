@@ -14,7 +14,7 @@ function NavBar() {
               <span className="left">
                   <img src={SampleLogo} className="App-logo" alt="logo" />
                   &nbsp;&nbsp;&nbsp;&nbsp;
-                  <span className="App-title">Test Sample Template</span>
+                  <span className="App-title">Test Template - SPA Using React</span>
               </span>
               <ul className="right">
                   <li><NavLink activeStyle={activeCSS} exact to="/">Home</NavLink></li>
