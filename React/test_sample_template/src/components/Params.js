@@ -4,26 +4,31 @@ class Params extends Component {
     
     state = {
         params: [
-            { id: 'icon_link1', value: ''},
-            { id: 'icon_link2', value: ''},
-            { id: 'icon_link3', value: ''},
+            { id: 'icon_link1', value: 'https://www.google.com'},
+            { id: 'icon_link2', value: 'https://editions.cnn.com'},
+            { id: 'icon_link3', value: 'https://www.msn.com'},
             { id: 'icon_link4', value: ''},
             { id: 'icon_link5', value: ''},
             { id: 'icon_link6', value: ''},
             { id: 'match', value: 'on'},
 
-            { id: 'icon_child1_firstname', value: ''},
-            { id: 'icon_child1_lastname', value: ''},
-            { id: 'icon_age1', value: ''},
-            { id: 'icon_child2_firstname', value: ''},
-            { id: 'icon_child2_lastname', value: ''},
-            { id: 'icon_age2', value: ''},
-            { id: 'icon_child3_firstname', value: ''},
-            { id: 'icon_child3_lastname', value: ''},
-            { id: 'icon_age3', value: ''},
+            { id: 'icon_child1_firstname', value: 'Rami'},
+            { id: 'icon_child1_lastname', value: 'Greenfield'},
+            { id: 'icon_age1', value: '6'},
+            { id: 'icon_child2_firstname', value: 'Yael'},
+            { id: 'icon_child2_lastname', value: 'Greenfield'},
+            { id: 'icon_age2', value: '3'},
+            { id: 'icon_child3_firstname', value: 'Doron'},
+            { id: 'icon_child3_lastname', value: 'Greenfield'},
+            { id: 'icon_age3', value: '1'},
             
             { id: 'delete', value: 'on'}
         ]
+    }
+
+    componentDidMount() {
+        console.log("Did mounted");
+        this.handleOnLoad();
     }
 
     updateParams = (id, value) => {
@@ -73,15 +78,17 @@ class Params extends Component {
 
     handleOnLoad = () => {
 
-        // https://stackoverflow.com/questions/35082047/call-external-javascript-function-from-react-components
+        //https://stackoverflow.com/questions/35082047/call-external-javascript-function-from-react-components
 
-        // // on load of params page
-        // // update all the default params that in the state to the form inputs
-        // this.state.params.map( param => {
-        //     return (
-        //         document.getElementById('{param.id}').value = {param.value};
-        //     );
-        // })
+        console.log('handleOnLoad');
+
+        // on load of params page
+        // update all the default params that in the state to the form inputs
+        this.state.params.map( param => {
+            console.log(param);
+            document.getElementById(param.id).value = param.value;
+            return param;
+        })
     }
 
     handleOnSubmit = (e) => {
@@ -102,7 +109,7 @@ class Params extends Component {
 
     render() {
         return (
-            <div className="Params container center" onLoad={this.handleOnLoad}>
+            <div className="Params container center">
                 <h1 className="header center orange-text">Parameters</h1>
               
                 <form onSubmit={this.handleOnSubmit}>
